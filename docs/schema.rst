@@ -9,8 +9,7 @@ Profile Register
 
 To register a profile (issuer) the ``PROFILE_REGISTER`` event is needed.
 
-.. raw:: javascript
-
+.. raw:: html
     <iframe src="https://raw.githubusercontent.com/sproof/sproof-schema/master/events/profileRegister.js" height="345px" width="100%"></iframe>
 
 

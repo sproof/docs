@@ -2,6 +2,24 @@
 API
 ========
 
+The sproof-api can be accessed by using the following domain: https://www.sproof.it/api/v1/. To enable a fast integration into a node application we provide a js-sproof-client.
+
+.. code-block:: javascript
+    const {Sproof}  = require('js-sproof-api');
+    let sproof = new Sproof ({
+        uri: 'https://www.sproof.it/'
+    });
+    sproof.newAccount();
+
+In the following we describe the API calls for the sproof objects.
+
+..note::
+    The params object provides fields to adjust the
+        - items per page : ``per_page`` : ``Number``
+        - request page: ``page`` : ``Number``  Page to request
+        - entry : If you need only one specific entry use ``id``:``String``
+
+
 Transaction
 =====================
 
@@ -28,7 +46,7 @@ Returns
 -------
 
 
-returns ``Object`` - A transaction object, or an error  when no transaction was found:
+returns ``Object`` - A transaction object, or an error when no transaction was found:
 
   - ``_id`` - ``String``: Transaction hash.
   - ``blockNumber`` - ``Number``: Blocknumber of the block.
@@ -91,7 +109,7 @@ Returns
 -------
 
 
-returns ``Object`` - A event object, or an error  when no event was found:
+returns ``Object`` - A event object, or an error when no event was found:
 
   - ``_id`` - ``String``: Event hash.
   - ``eventType`` - ``String``: Type of the event.
@@ -123,13 +141,130 @@ Example
 ------------------------------------------------------------------------------
 
 Profile
---------
+=====================
 
-Registration
---------
 
-Receiver
---------
+.. code-block:: javascript
+
+    sproof.getProfiles(params, callback)
+
+Returns the profile object.
+
+.. note:: If the id property in params is set, this call returns the specified profile, otherwise it returns a list of the last 10 entries.
+
+
+----------
+Parameters
+----------
+
+1. ``Object`` - params for call.
+2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+
+
+-------
+Returns
+-------
+
+
+returns ``Object`` - A profile object, or an error when no profile was found:
+
+  - ``_id`` - ``String``: Address of profile owner.
+  - ``data`` - ``Object``: Profile payload.
+  - ``publicKey`` - ``String``: Profiles public key.
+  - ``lastUpdate`` - ``Number``: Unix timestamp of the last interaction from this profile.
+  - ``timestamp`` - ``Number``: Unix timestamp of the creation date.
+  - ``valid`` - ``Boolean``: ``TRUE`` if the profile was not revoked.
+  - ``registrations`` - ``Object``: List of registration events.
+  - ``events`` - ``Object``: List of all events.
+  - ``confirmations`` - ``Object``: Confirmation collection
+
+-------
+Example
+-------
+
+.. code-block:: javascript
+
+    sproof.getProfiles({id: '0x86ec4f0b4e8ecc2f13f8ad86d9f6c2db30648b96'} , (err, res) => {
+        console.log(res);
+    });
+
+    > {
+        _id: '0x86ec4f0b4e8ecc2f13f8ad86d9f6c2db30648b96',
+        data: { ... },
+        publicKey: '0x2ab25035b3d357215c7d7656c9f3fa2d37a25e26dd0c75169dadb5b9292dfed3004b3094c8b4a5ba56e4550d77fabc1cc6d678b38e2ab33dfae96daaae3d0c8e',
+        lastUpdate: 1545231020,
+        timestamp: 1545231020,
+        valid: true,
+        registrations: [],
+        events:
+        [
+            '0xfe0bbd902a699a4d6546e20c2c199398f6f454354df9e93f17e780904ce794e9'
+        ],
+        confirmations: [ ... ]
+    }
+
+------------------------------------------------------------------------------
+
+Registrations
+=====================
+
+
+.. code-block:: javascript
+
+    sproof.getRegistrations(params, callback)
+
+Returns the registration object.
+
+.. note:: If the id property in params is set, this call returns the specified registration, otherwise it returns a list of the last 10 entries.
+
+
+----------
+Parameters
+----------
+
+1. ``Object`` - params for call.
+2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+
+
+-------
+Returns
+-------
+
+
+returns ``Object`` - A registration object, or an error when no registration was found:
+
+  - ``_id`` - ``String``: Hash of the registration.
+  - ``issuer`` - ``Object``: Address of the issuer.
+  - ``event`` - ``String``: Corresponding event registration hash.
+  - ``validFrom`` - ``Number``: Unix timestamp valid from.
+  - ``validUntil`` - ``Number``: Unix timestamp valid until.
+  - ``documentHash`` - ``String``: Hash of the registered document.
+  - ``valid`` - ``Boolean``: ``TRUE`` if the registration was not revoked.
+  - ``dependencies`` - ``Object``: List of dependencies.
+
+-------
+Example
+-------
+
+.. code-block:: javascript
+
+    sproof.getRegistrations({id: '0xb4af7c7b9d4ab6dbe222d4f1c5f8837159d3efbacfe34d1fb5e186ec59fafaec'} , (err, res) => {
+        console.log(res);
+    });
+
+    > {
+        _id: '0xb4af7c7b9d4ab6dbe222d4f1c5f8837159d3efbacfe34d1fb5e186ec59fafaec',
+        issuer: '0x86ec4f0b4e8ecc2f13f8ad86d9f6c2db30648b96',
+        event: '0x74ff215595298423dd1569356e9c30540cd85ad941c17dce762fe52326a08c43',
+        validFrom: null,
+        validUntil: null,
+        documentHash: '0xb4af7c7b9d4ab6dbe222d4f1c5f8837159d3efbacfe34d1fb5e186ec59fafaec',
+        valid: true,
+        dependencies: []
+    }
+
+------------------------------------------------------------------------------
+
 
 
 

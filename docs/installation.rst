@@ -2,6 +2,6 @@
 Installation
 ============
 
-Install the package with pip::
+Install the package with npm::
 
-    $ pip install read-the-docs-template
+    $ npm install js-sproof-client

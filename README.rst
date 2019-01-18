@@ -1,39 +1,35 @@
-Template
+js-sproof-client
 ========
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+The js-sproof-client is written in node. The sproof-client supports the integration of the sproof protocol in your project.
 
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
 
 Features
 --------
 
-- Be awesome
-- Make things faster
+- Create profiles
+- Register documents
+- Issue documents to receivers
+- Verify receivers, issuers, and documents
 
 Installation
 ------------
 
-Install $project by running:
+Install js-sproof-client by running:
 
-    install project
+    npm install js-sproof-client
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+- Issue Tracker: github.com/sproof/js-sproof-client/issues
+- Source Code: github.com/sproof/js-sproof-client
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+We have a mailing list located at: team@sproof.it
 
 License
 -------

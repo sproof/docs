@@ -1,11 +1,14 @@
 
 ========
-Profiles
+Examples
 ========
+
+Profiles
+=====================
 
 Create a sproof profile
 
-.. code-block.: javascript
+.. code-block:: javascript
 
     const { Sproof }  = require('js-sproof-client');
 
@@ -28,13 +31,12 @@ Create a sproof profile
 
 ------------------------------------------------------------------------------
 
-========
 Document
-========
+=====================
 
 Create a profile and register a document
 
-.. code-block.: javascript
+.. code-block:: javascript
 
     const { Sproof, Registration }  = require('js-sproof-client');
 

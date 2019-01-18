@@ -296,6 +296,7 @@ Add
 To add a receiver to a document the ``DOCUMENT_RECEIVER_ADD`` event is needed.
 
 .. code-block:: javascript
+
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Document receiver add",
@@ -332,6 +333,7 @@ Revoke
 To revoke a receiver of a document the ``DOCUMENT_RECEIVER_REVOKE`` event is needed.
 
 .. code-block:: javascript
+
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Document receiver revoke",

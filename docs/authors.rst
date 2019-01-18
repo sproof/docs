@@ -1,1 +1,5 @@
-.. include:: ../AUTHORS.rst
+Authors
+-------
+
+* Clemens Brunner
+* Fabian Knirsch

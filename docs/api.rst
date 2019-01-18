@@ -2,7 +2,7 @@
 API
 ========
 
-The sproof-api can be accessed by using the following domain: https://www.sproof.it/api/v1/. To enable a fast integration into a node application we provide a js-sproof-client.
+The sproof-api can be accessed by using the following domain: https://www.sproof.it/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.
 
 .. code-block:: javascript
     const {Sproof}  = require('js-sproof-api');
@@ -265,6 +265,53 @@ Example
 
 ------------------------------------------------------------------------------
 
+Validation
+=====================
 
 
+.. code-block:: javascript
+
+    sproof.getValidation(id, callback)
+
+Returns the validation object.
+
+
+----------
+Parameters
+----------
+
+1. ``String`` - hash to verify.
+2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+
+
+-------
+Returns
+-------
+
+
+returns ``Object`` - A registration object, or an error when no registration was found:
+
+  - ``validation`` - ``Object``: Contains boolean values which indicates if the registration or the profile was revoked or not.
+  - ``registration`` - ``Object``: Registration event.
+  - ``profile`` - ``Object``: Issuer payload
+
+-------
+Example
+-------
+
+.. code-block:: javascript
+
+    sproof.getValidation('0x5d7a02fda80aa4f70032c180ec3aa4a4f3f3075ae7abeb514186be1f104dd271' , (err, res) => {
+        console.log(res);
+    });
+
+    > "validation": {
+            "registration":true,
+            "profile":true
+        },
+        "registration":{ ... }
+        "profile" : { ...  }
+    }
+
+------------------------------------------------------------------------------
 

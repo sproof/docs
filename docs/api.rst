@@ -2,7 +2,7 @@
 API
 ========
 
-The sproof-api can be accessed by using the following domain: https://www.sproof.it/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.
+The sproof-api can be accessed by using the following domain: https://api.sproof.it/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.
 
 .. code-block:: javascript
 

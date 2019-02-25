@@ -6,6 +6,9 @@
 Welcome to sproof's documentation!
 ==================================================
 
+sproof is a decentralized application that uses a blockchain for managing digital documents. sproof is designed for scalability and processes a number of events (e.g., register a document, revoke a document) within a single transaction. sproof makes the process of digital document verification easy and fast and provides an open, privacy-preserving protocol following the principle "developers first". An easy-to-integrate API makes developing applications fast and allows for digitalizing existing businesses, as well as for building all-new business models.
+
+
 Contents:
 
 .. toctree::

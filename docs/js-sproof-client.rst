@@ -29,7 +29,7 @@ Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: team@sproof.it
+We have a mailing list located at: team@sproof.io
 
 License
 -------

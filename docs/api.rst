@@ -6,7 +6,7 @@ The sproof-api can be accessed by using the following domain: https://api.sproof
 
 .. code-block:: javascript
 
-    const {Sproof}  = require('js-sproof-api');
+    const {Sproof}  = require('js-sproof-client');
     let sproof = new Sproof ({
         uri: 'https://api.sproof.io/'
     });

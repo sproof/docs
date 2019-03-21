@@ -75,7 +75,7 @@ Create a profile and register a document
 Publish and register a local Pdf File
 =====================
 
-Create a profile and register a document
+Upload a Pdf to IPFS and secure it with the blockchain
 
 .. code-block:: javascript
 

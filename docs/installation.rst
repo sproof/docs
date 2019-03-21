@@ -4,4 +4,4 @@ Installation
 
 Install the package with npm::
 
-    $ npm install js-sproof-client
+    $ npm install --save js-sproof-client

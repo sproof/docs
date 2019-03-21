@@ -3,6 +3,8 @@
 Examples
 ========
 
+In the following you will find some examples to integrate and use sproof.
+
 Profiles
 =====================
 
@@ -70,3 +72,40 @@ Create a profile and register a document
       else console.log(res);
     });
 
+Publish and register a local Pdf File
+=====================
+
+Create a profile and register a document
+
+.. code-block:: javascript
+
+    const { Sproof, Registration }  = require('../index.js');
+    const config = require ('./config/config_issuer');
+    const fs = require('fs');
+
+    let sproof = new Sproof(config)
+
+
+    let data = fs.readFileSync('./example.pdf');
+
+    sproof.uploadFile(data, (err,res) => { //upload file to ipfs
+      if (res) {
+        let documentHash = sproof.getHash(data); //calculate hash of the file
+
+        let registration  = new Registration({
+          documentHash,
+          name: 'mytestpdf',
+          locationHash: res.hash, //add ipfs location hash
+          validFrom: undefined, //unix timestamp
+          validUntil: undefined, //unix timestamp
+        });
+
+        sproof.registerDocument(registration);
+
+        sproof.commitPremium((err, res) => {
+          if (err) console.error(err);
+          else console.log(res);
+        });
+      }else
+        console.error(err)
+    });

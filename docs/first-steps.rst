@@ -2,11 +2,42 @@
 First steps
 ========
 
-sproof is a decentralized open source protocol for registering data and documents in a public blockchain. To use sproof we provide clients in different programming languages. Currently we support javascript, Java and C are comming soon.
+sproof is a decentralized open source protocol for registering data and documents in a public blockchain. To use sproof we provide clients in different programming languages. Currently we support javascript, Java and C are coming soon.
 
 
 Create a node project
 =====================
+
+
+.. tabs::
+
+   .. tab:: Mac OS
+
+      If you are having trouble on OS X Mavericks
+      (or possibly other versions of OS X) with building ``lxml``,
+      you probably might need to use Homebrew_ to ``brew install libxml2``,
+      and invoke the install with::
+
+          CFLAGS=-I/usr/local/opt/libxml2/include/libxml2 \
+          LDFLAGS=-L/usr/local/opt/libxml2/lib \
+          pip install -r requirements.txt
+
+   .. tab:: Ubuntu
+
+      Install::
+
+         sudo apt-get install build-essential
+         sudo apt-get install python-dev python-pip python-setuptools
+         sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
+
+      If you don't have redis installed yet, you can do it with::
+
+         sudo apt-get install redis-server
+
+   .. tab:: CentOS/RHEL 7
+
+         sudo yum install python-devel python-pip libxml2-devel libxslt-devel
+
 
 ----------
 Install node and npm
@@ -15,16 +46,19 @@ Install node and npm
 You need to create a node project to use the ``js-sproof-client``. Before creating a project you need to install the latest version of ``npm`` and ``nodejs``.
 
 .. tabs::
+
     .. tab:: Ubuntu 18.04
     Install::
 
     sudo apt update
     sudo apt install nodejs npm
 
-    You have installed ``nodejs`` and ``npm`` in the following versions.:
+    You have installed ``nodejs`` and ``npm`` in the following versions::
 
     nodejs --version
     Output: v8.x.x
+
+    and::
 
     npm --version
     Output: 6.x.x
@@ -42,9 +76,9 @@ Create the project structure
 ----------
 
 Create a new folder for your project and open it with a terminal.
-Run ``npm init`` and follow the instructions. After that install the ``js-sproof-client`` with
+Run ``npm init`` and follow the instructions. After that install the ``js-sproof-client`` with::
 
-    $ npm install --save js-sproof-client
+    npm install --save js-sproof-client
 
 Create a new file called ``index.js`` and ``config.js`` in your project folder.
 
@@ -58,22 +92,19 @@ We provide two different methods to create your unique sproof account, which is 
 Standard
 ----------
 
-If you want to use your own Ether (Cryptocurrencies) to paid for your transaction you need to create your public-private key pair with the following code:
-.. code-block:: javascript
-    const { Sproof, Registration }  = require('js-sproof-client');
+If you want to use your own Ether (Cryptocurrencies) to paid for your transaction you need to create your public-private key pair with the following code::
 
+    const { Sproof, Registration }  = require('js-sproof-client');
     let sproof = new Sproof({
       uri: 'https://sproof.it/',
     });
-
     let credentials = sproof.newAccount();
-
     console.log(credentials)
 
 After that you need to request Ether. Currently sproof lives in the Kovan Testnet. To get Ether you need to past your address in a message in the `kovan gitter channel <https://gitter.im/kovan-testnet/faucet/>`_.
 
 Once your account has Ether you can register your stuff with the following command::
-.. code-block:: javascript
+
     sproof.commit(callback)
 
 
@@ -96,18 +127,13 @@ Create a config
 
 Add the following code to your ```config.js``` file and replace the ``sproofCode``::
 
-.. code-block:: javascript
     let config = {
-
-  uri: 'https://api.sproof.io/',
-  credentials: {
-    sproofCode: 'word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12',
-  },
-};
-
-module.exports = config;
-
-
+        uri: 'https://api.sproof.io/',
+        credentials: {
+            sproofCode: 'word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12',
+        },
+    };
+    module.exports = config;
 
 Register your first document
 =====================

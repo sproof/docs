@@ -18,20 +18,11 @@ You need to create a node project to use the ``js-sproof-client``. Before creati
 .. tabs::
 
     .. tab:: Ubuntu 18.04
+
     Install::
 
     sudo apt update
     sudo apt install nodejs npm
-
-    You have installed ``nodejs`` and ``npm`` in the following versions::
-
-    nodejs --version
-    Output: v8.x.x
-
-    and::
-
-    npm --version
-    Output: 6.x.x
 
     .. tab:: Windows
 
@@ -40,6 +31,7 @@ You need to create a node project to use the ``js-sproof-client``. Before creati
     .. tab:: Mac OS
 
     Coming soon. Feel free to edit the docs on github.
+
 
 ----------
 Create the project structure

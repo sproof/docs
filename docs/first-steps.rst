@@ -9,36 +9,6 @@ Create a node project
 =====================
 
 
-.. tabs::
-
-   .. tab:: Mac OS
-
-      If you are having trouble on OS X Mavericks
-      (or possibly other versions of OS X) with building ``lxml``,
-      you probably might need to use Homebrew_ to ``brew install libxml2``,
-      and invoke the install with::
-
-          CFLAGS=-I/usr/local/opt/libxml2/include/libxml2 \
-          LDFLAGS=-L/usr/local/opt/libxml2/lib \
-          pip install -r requirements.txt
-
-   .. tab:: Ubuntu
-
-      Install::
-
-         sudo apt-get install build-essential
-         sudo apt-get install python-dev python-pip python-setuptools
-         sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
-
-      If you don't have redis installed yet, you can do it with::
-
-         sudo apt-get install redis-server
-
-   .. tab:: CentOS/RHEL 7
-
-         sudo yum install python-devel python-pip libxml2-devel libxslt-devel
-
-
 ----------
 Install node and npm
 ----------

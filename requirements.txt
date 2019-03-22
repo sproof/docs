@@ -1,5 +1,3 @@
--r pip.txt
-
 # Base packages
 docutils==0.14
 sphinx_rtd_theme==0.4.3

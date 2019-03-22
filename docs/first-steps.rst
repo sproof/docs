@@ -9,6 +9,7 @@ Create a node project
 =====================
 
 
+
 ----------
 Install node and npm
 ----------
@@ -101,6 +102,3 @@ Register your first document
 =====================
 
 Take a look at the code examples on github or in the examples section.
-
-
-

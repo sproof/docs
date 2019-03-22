@@ -1,0 +1,6 @@
+sproof-docs-dev:
+  image: staker4/sphinx-autobuild:latest
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./docs:/sphinx-doc

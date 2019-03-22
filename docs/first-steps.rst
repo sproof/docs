@@ -16,23 +16,22 @@ Install node and npm
 
 You need to create a node project to use the ``js-sproof-client``. Before creating a project you need to install the latest version of ``npm`` and ``nodejs``.
 
-.. tabs::
+    .. tabs::
 
-    .. tab:: Ubuntu 18.04
+       .. tab:: Ubuntu
 
-    Install::
+         Install::
 
-    sudo apt update
-    sudo apt install nodejs npm
+             sudo apt update
+             sudo apt install nodejs npm
 
-    .. tab:: Windows
+       .. tab:: Windows
 
-    Coming soon. Feel free to edit the docs on github.
+          Coming soon. Feel free to edit the docs on github.
 
-    .. tab:: Mac OS
+       .. tab:: Mac OS
 
-    Coming soon. Feel free to edit the docs on github.
-
+          Coming soon. Feel free to edit the docs on github.
 
 ----------
 Create the project structure

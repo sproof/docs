@@ -13,11 +13,10 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   :glob:
 
-   *
-
-
-
-
-
+   first-steps
+   examples
+   events
+   api
+   contributing
+   help

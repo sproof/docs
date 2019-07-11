@@ -58,12 +58,15 @@ If you want to use your own Ether (Cryptocurrencies) to paid for your transactio
 
     const { Sproof, Registration }  = require('js-sproof-client');
     let sproof = new Sproof({
-      uri: 'https://sproof.it/',
+      uri: 'https://api.sproof.io/',
+      chainId: '3',
+      chain: 'ethereum',
+      version: '0.42'
     });
     let credentials = sproof.newAccount();
     console.log(credentials)
 
-After that you need to request Ether. Currently sproof lives in the Kovan Testnet. To get Ether you need to past your address in a message in the `kovan gitter channel <https://gitter.im/kovan-testnet/faucet/>`_.
+After that you need to request Ether. Currently sproof lives in the Ropsten Testnet. To get Ether you need to enter your address on te `website <https://faucet.ropsten.be/>`_.
 
 Once your account has Ether you can register your stuff with the following command::
 
@@ -94,6 +97,9 @@ Add the following code to your ```config.js``` file and replace the ``sproofCode
         credentials: {
             sproofCode: 'word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12',
         },
+        chainId: '3',
+        chain: 'ethereum',
+        version: '0.42'
     };
     module.exports = config;
 

@@ -8,7 +8,10 @@ The sproof-api can be accessed by using the following domain: https://api.sproof
 
     const {Sproof}  = require('js-sproof-client');
     let sproof = new Sproof ({
-        uri: 'https://api.sproof.io/'
+        uri: 'https://api.sproof.io/',
+        chainId: '3',
+        chain: 'ethereum',
+        version: '0.42'
     });
     sproof.newAccount();
 

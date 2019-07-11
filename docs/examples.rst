@@ -15,7 +15,10 @@ Create a sproof profile
     const { Sproof }  = require('js-sproof-client');
 
     let sproof = new Sproof({
-      uri: 'https://sproof.it/',
+      uri: 'https://api.sproof.io/',
+      chainId: '3',
+      chain: 'ethereum',
+      version: '0.42'
     });
 
     let credentials = sproof.newAccount();
@@ -43,7 +46,10 @@ Create a profile and register a document
     const { Sproof, Registration }  = require('js-sproof-client');
 
     let sproof = new Sproof({
-      uri: 'https://sproof.it/',
+      uri: 'https://api.sproof.io/',
+      chainId: '3',
+      chain: 'ethereum',
+      version: '0.42'
     });
 
     let credentials = sproof.newAccount();
@@ -79,7 +85,7 @@ Upload a Pdf to IPFS and secure it with the blockchain
 
 .. code-block:: javascript
 
-    const { Sproof, Registration }  = require('../index.js');
+    const { Sproof, Registration }  = require('js-sproof-client');
     const config = require ('./config/config_issuer');
     const fs = require('fs');
 

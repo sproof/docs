@@ -18,5 +18,6 @@ Contents:
    examples
    events
    api
+   sproof-api-client
    contributing
    help

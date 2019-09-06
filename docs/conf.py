@@ -99,7 +99,32 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+#html_theme = 'default'
+html_theme = "sphinx_rtd_theme"
+
+
+html_theme_options = {
+    'canonical_url': '',
+    'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4
+}
+
+style_nav_header_background = '#000000'
+html_logo = "_static/img/sproof-logo.svg"
+
+# These folders are copied to the documentation's HTML output
+html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]
+
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -108,6 +133,9 @@ html_theme = 'default'
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
+
+#html_theme_path = ["_themes" ]
+
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

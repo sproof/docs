@@ -12,7 +12,7 @@ Register file
 
 .. code-block:: bash
 
-    POST: https://verify.sproof.io/api/v1/file/register?public=true&name=NameOfYourDocument&accessCode={yourAccessCode}
+    POST: https://{{yourDomain}}/api/v1/file/register?public=true&name=NameOfYourDocument&accessCode={yourAccessCode}
 
 The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
 
@@ -45,7 +45,7 @@ Revoke file
 
 .. code-block:: bash
 
-    POST: https://verify.sproof.io/api/v1/file/revoke?accessCode={yourAccessCode}
+    POST: https://{{yourDomain}}/api/v1/file/revoke?accessCode={yourAccessCode}
 
 The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
 
@@ -64,7 +64,7 @@ Verify file
 
 .. code-block:: bash
 
-    POST: https://verify.sproof.io/api/v1/file/verify
+    POST: https://{{yourDomain}}/api/v1/file/verify
 
 The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
 
@@ -89,7 +89,7 @@ The commit to the sproof platform is performed according the defined schedule. I
 
 .. code-block:: bash
 
-    GET: https://verify.sproof.io/api/v1/commit?accessCode={yourAccessCode}
+    GET: https://{{yourDomain}}/api/v1/commit?accessCode={yourAccessCode}
 
 ----------
 Parameters
@@ -111,7 +111,7 @@ Returns the current state of the client api. This includes also information abou
 
 .. code-block:: bash
 
-    GET: https://verify.sproof.io/api/v1/state?accessCode={yourAccessCode}
+    GET: https://{{yourDomain}}/api/v1/state?accessCode={yourAccessCode}
 
 ----------
 Parameters

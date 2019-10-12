@@ -115,7 +115,7 @@ html_theme_options = {
 }
 
 style_nav_header_background = '#000000'
-html_logo = "_static/img/sproof-logo.svg"
+html_logo = "_static/img/sproof-logo.png"
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']

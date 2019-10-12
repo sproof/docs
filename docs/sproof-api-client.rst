@@ -12,7 +12,7 @@ Register file
 
 .. code-block:: bash
 
-    POST: https://{{yourDomain}}/api/v1/file/register?public=true&name=NameOfYourDocument&accessCode={yourAccessCode}
+    POST: https://{{yourDomain}}/api/v1/file/register?public=false&name=NameOfYourDocument&accessCode={yourAccessCode}
 
 The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
 
@@ -125,3 +125,65 @@ Returns
 returns ``Object`` - A object of all information which is stored of the premium users.
 
 ------------------------------------------------------------------------------
+
+
+Example
+=====================
+
+    .. tabs::
+
+       .. tab:: PHP
+
+         Example Code::
+
+            <?php
+
+                $document = '{YOUR PDF FILE}'
+
+                //write file to filesystem
+                tempFileName = tempnam(sys_get_temp_dir(), 'pdfDocForSproof');
+                file_put_contents($tempFileName, $document);
+
+
+                $ch = curl_init(
+                    'https://{YOUR_DOMAIN}/api/v1/file/register?' . http_build_query([
+                        'name' => 'Example Name',
+                        'accessCode' => '{YOUR ACCESS CODE}'
+                    ])
+                );
+
+                curl_setopt($ch, CURLOPT_POST, 1);
+
+                curl_setopt($curl, CURLOPT_POSTFIELDS, [
+                    'file' => curl_file_create($tempFileName)
+                ]);
+
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                $server_response = curl_exec($ch);
+
+                if (curl_errno($ch)) {
+                  echo "Response: {$server_response}";
+                 } else {
+                   echo "Error: {$server_response}";
+                  }
+
+                curl_close ($ch);
+                unlink($tempFileName);
+
+            ?>
+
+
+
+
+       .. tab:: Java
+
+          Coming soon. Feel free to edit the docs on github.
+
+       .. tab:: Javascript
+
+          Coming soon. Feel free to edit the docs on github.
+
+       .. tab:: C#
+
+          Coming soon. Feel free to edit the docs on github.

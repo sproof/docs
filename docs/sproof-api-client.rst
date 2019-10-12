@@ -173,17 +173,46 @@ Example
 
             ?>
 
+       .. tab:: C#
+
+            Example Code::
+
+                HttpClient client = new HttpClient(){
+                    BaseAddress = new Uri("YOUR SPROOF DOMAIN"),
+                    Timeout = TimeSpan.FromMilliseconds(5000)
+                };;
+
+                byte[] data = File.ReadAllBytes("{PATH TO FILE"});
+                const string apiPath = "file/register?name={NAME_OF_FILE}&accessCode={YOUR ACCESS CODE}";
+                var content = new MultipartFormDataContent();
+                content.Add(new ByteArrayContent(data), "file", "file");
+
+                try{
+                    var response = await client.PostAsync(apiPath, content);
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK){
+                        //handle Error
+                    } else {
+                        string jsonString = await response.Content.ReadAsStringAsync();
+                        dynamic json = JsonConvert.DeserializeObject(jsonString);
+
+                        if (json.error != null){
+                            //handle Success
+                        } else {
+                            //handle Error
+                        }
+                    }
+                }
+                catch{
+                    //handle error
+                }
 
 
+          Coming soon. Feel free to edit the docs on github.
 
-       .. tab:: Java
+        .. tab:: Java
 
           Coming soon. Feel free to edit the docs on github.
 
        .. tab:: Javascript
-
-          Coming soon. Feel free to edit the docs on github.
-
-       .. tab:: C#
 
           Coming soon. Feel free to edit the docs on github.

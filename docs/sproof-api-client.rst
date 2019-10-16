@@ -183,7 +183,7 @@ Example
                 };;
 
                 byte[] data = File.ReadAllBytes("{PATH TO FILE"});
-                const string apiPath = "file/register?name={NAME_OF_FILE}&accessCode={YOUR ACCESS CODE}";
+                const string apiPath = "https://YOUR_SPROOF_DOMAIN/api/v1/file/register?name={NAME_OF_FILE}&accessCode={YOUR ACCESS CODE}";
                 var content = new MultipartFormDataContent();
                 content.Add(new ByteArrayContent(data), "file", "file");
 
@@ -207,12 +207,32 @@ Example
                 }
 
 
-          Coming soon. Feel free to edit the docs on github.
-
         .. tab:: Java
 
           Coming soon. Feel free to edit the docs on github.
 
        .. tab:: Javascript
 
-          Coming soon. Feel free to edit the docs on github.
+        Example Code::
+            const FormData = require('form-data');
+            const fetch = require('node-fetch');
+            var fs = require('fs');
+
+            let path = 'PATH TO FILE'
+            let accessCode = 'YOUR ACCESS CODE'
+
+            var form = new FormData();
+            var readStream = fs.createReadStream(path);
+
+            form.append('file', readStream);
+            fetch(`https://{YOUR_DOMAIN}/api/v1/file/register?accessCode=${accessCode}&name=test`, {
+              method: 'POST',
+              body: form
+            })
+              .then(res => res.json())
+              .then(result => {
+                console.log('result', result);
+              })
+              .catch(error => {
+                console.error('error', error);
+            });

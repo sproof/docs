@@ -1,5 +1,5 @@
 ========
-API
+Open API
 ========
 
 The sproof-api can be accessed by using the following domain: https://api.sproof.io/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.

@@ -14,10 +14,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   first-steps
-   examples
-   events
-   api
    sproof-api-client
-   contributing
+   js-sproof-client
+   schema
+   api
    help

@@ -1,5 +1,5 @@
 ========
-Events
+Schema
 ========
 
 The sproof-core module is a state machine which lives on top of a blockchain. The state transitions is triggered by socalled events. An issuer can add the hash reference of a list of events in a transaction to the blockchain, the raw-data is stored in IPFS. In this section we describe all currently available events.

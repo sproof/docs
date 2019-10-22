@@ -1,5 +1,5 @@
 ========
-Open API
+API
 ========
 
 The sproof-api can be accessed by using the following domain: https://api.sproof.io/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.
@@ -18,7 +18,7 @@ The sproof-api can be accessed by using the following domain: https://api.sproof
 In the following we describe the API calls for the sproof objects.
 
 .. note::
-    The params object provides fields to adjust the
+The params object provides fields to adjust the
         - items per page : ``per_page`` : ``Number``
         - request page: ``page`` : ``Number``  Page to request
         - entry : If you need only one specific entry use ``id``:``String``

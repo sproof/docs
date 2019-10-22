@@ -261,6 +261,7 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
       },
       "required" : ['eventType', 'data']
     }
+
 ----------
 Revoke
 ----------

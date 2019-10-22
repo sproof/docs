@@ -3,8 +3,7 @@ js sproof client
 ========
 
 
-sproof is a decentralized open source protocol for registering data and documents in a public blockchain. To use sproof we provide clients in different programming languages. Currently we support javascript, Java and C are coming soon.
-
+sproof is a decentralized open source protocol for registering data and documents in a public blockchain. To use sproof we provide clients in different programming languages.
 
 Create a node project
 =====================
@@ -78,14 +77,14 @@ Once your account has Ether you can register your stuff with the following comma
 Premium
 ----------
 
-If you don't want to request Ether you can use our premium api, where sproof acts as a proxy and forwards your secure data and your locally created signature to the blockchain. To use this service you need to create your account and a sproof profile with your  `webapp <https://app.sproof.io`_.
+If you don't want to request Ether you can use our premium api, where sproof acts as a proxy and forwards your secure data and your locally created signature to the blockchain. To use this service you need to create your account and a sproof profile with our webapp:  https://app.sproof.io.
 
 Once your profile is created you can download your ``sproof-code``, with 10 free uploads attached. If you need more uploads feel free to contact team@sproof.io.
 
 Your sproof code is a mnemonic which contains 12 randomly chosen words.
 
 .. note::
-    sproof does not stores your sproof-core. In case that you lose your ``sproof-code`` we cannot recover it.
+sproof does not stores your sproof-core. In case that you lose your ``sproof-code`` we cannot recover it.
 
 
 Create a config file
@@ -224,3 +223,5 @@ Upload a Pdf to IPFS and secure it with the blockchain
       }else
         console.error(err)
     });
+
+

@@ -1,5 +1,5 @@
 ========
-sproof API client
+API
 ========
 
 The sproof API client is a docker-container which encapsulates the ``js-sproof-client`` and can be access with standard API calls. Currently this module supports the registration and the revocation of arbitrary files.
@@ -134,7 +134,7 @@ Example
 
        .. tab:: PHP
 
-         Example Code::
+        .. code-block:: bash
 
             <?php
 
@@ -175,7 +175,7 @@ Example
 
        .. tab:: C#
 
-            Example Code::
+            .. code-block:: bash
 
                 HttpClient client = new HttpClient(){
                     BaseAddress = new Uri("YOUR SPROOF DOMAIN"),
@@ -206,34 +206,34 @@ Example
                     //handle error
                 }
 
-
-        .. tab:: Java
-
-          Coming soon. Feel free to edit the docs on github.
-
        .. tab:: Javascript
 
-        Example Code::
+            .. code-block:: bash
 
-            const FormData = require('form-data');
-            const fetch = require('node-fetch');
-            var fs = require('fs');
+                const FormData = require('form-data');
+                const fetch = require('node-fetch');
+                var fs = require('fs');
 
-            let path = 'PATH TO FILE'
-            let accessCode = 'YOUR ACCESS CODE'
+                let path = 'PATH TO FILE'
+                let accessCode = 'YOUR ACCESS CODE'
 
-            var form = new FormData();
-            var readStream = fs.createReadStream(path);
+                var form = new FormData();
+                var readStream = fs.createReadStream(path);
 
-            form.append('file', readStream);
-            fetch(`https://{YOUR_DOMAIN}/api/v1/file/register?accessCode=${accessCode}&name=test`, {
-              method: 'POST',
-              body: form
-            })
-              .then(res => res.json())
-              .then(result => {
-                console.log('result', result);
-              })
-              .catch(error => {
-                console.error('error', error);
-            });
+                form.append('file', readStream);
+                fetch(`https://{YOUR_DOMAIN}/api/v1/file/register?accessCode=${accessCode}&name=test`, {
+                  method: 'POST',
+                  body: form
+                })
+                  .then(res => res.json())
+                  .then(result => {
+                    console.log('result', result);
+                  })
+                  .catch(error => {
+                    console.error('error', error);
+                });
+
+
+       .. tab:: Java
+
+           Coming soon. Feel free to edit the docs on github.

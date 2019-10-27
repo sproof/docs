@@ -2,9 +2,9 @@
 API
 ========
 
-The sproof API client is a docker-container which encapsulates the ``js-sproof-client`` and can be access with standard API calls. Currently this module supports the registration and the revocation of arbitrary files.
+The sproof API client is a docker container which encapsulates the ``js-sproof-client`` and can be accessed through regular API calls. Currently, this module supports the registration and the revocation of arbitrary files.
 
-After the setup phase the API can be access only with a valid access token, which is generated locally.
+After the setup phase, the API can be accessed only with a valid access token. This token is generated locally.
 
 Register file
 =====================
@@ -14,9 +14,9 @@ Register file
 
     POST: https://{{yourDomain}}/api/v1/file/register?public=false&name=NameOfYourDocument&accessCode={yourAccessCode}
 
-The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
+The body must contain a file embedded into a ``form-data`` field. The name of the document must be ``file``.
 
-Returns the hash and the id of the document. Additionally if the parameter public is set to true, it will also return the location hash (IPFS reference, which can be accessed via https://ipfs.io/ipfs/{locationHash}.
+The call returns the hash and the ID of the document. Additionally, if the parameter ``public`` is set to true, it will also return the location hash (an IPFS reference, which can be accessed via https://ipfs.io/ipfs/{locationHash}).
 
 
 ----------
@@ -24,8 +24,8 @@ Parameters
 ----------
 
 1. ``accessCode`` - Needed for authorization.
-2. ``public`` - If the file should be publicly access able, set public to true. Default is false.
-3. ``name`` - Optional a name for the file, this files could also be used as a tag.
+2. ``public`` - If the file should be publicly accessible, set ``public`` to true. The default is false.
+3. ``name`` - Optionally, a name for the file. This name may also be used as a tag.
 
 
 -------
@@ -34,8 +34,8 @@ Returns
 
 
   - ``hash`` - ``String``: The hash of the document.
-  - ``location`` - ``String``: If the parameter public is set to true, it will return the IPFS location hash.
-  - ``id`` - ``String``: The id of the file, calculated with the issuers address and the document hash.
+  - ``location`` - ``String``: If the parameter ``public`` is set to true, it will return the IPFS location hash.
+  - ``id`` - ``String``: The ID of the file, calculated from the issuer's address and the document hash.
 
 ------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ Revoke file
 
     POST: https://{{yourDomain}}/api/v1/file/revoke?accessCode={yourAccessCode}
 
-The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
+The body must contain a file embedded into a ``form-data`` field. The name of the document must be ``file``.
 
 ----------
 Parameters
@@ -66,17 +66,17 @@ Verify file
 
     POST: https://{{yourDomain}}/api/v1/file/verify
 
-The body must contain a file embedded into a ```form-data``` the name of the document must be ```file```.
+The body must contain a file embedded into a ``form-data`` field. The name of the document must be ``file``.
 
 -------
 Returns
 -------
 
-returns ``List`` - A list of registration objects, or an error when no registration was found:
+The call returns ``List`` - a list of registration objects, or an error when no registration was found:
 
-  - ``validation`` - ``Object``: Contains boolean values which indicates if the registration or the profile was revoked or not.
-  - ``registration`` - ``Object``: Registration event.
-  - ``profile`` - ``Object``: Issuer payload
+  - ``validation`` - ``Object``: Contains boolean values which indicate whether the registration or the profile was revoked or not.
+  - ``registration`` - ``Object``: The registration event.
+  - ``profile`` - ``Object``: The issuer payload
 
 
 
@@ -85,7 +85,7 @@ returns ``List`` - A list of registration objects, or an error when no registrat
 Commit
 =====================
 
-The commit to the sproof platform is performed according the defined schedule. If a irregular commit is necessary this call can be used.
+Commits to the sproof platform are performed according the defined schedule. If an irregular commit is necessary, this call can be used.
 
 .. code-block:: bash
 
@@ -100,14 +100,14 @@ Parameters
 -------
 Returns
 -------
-returns ``Object`` - A object of all information which is send to the sproof platform. This includes all events and attached data.
+The call returns ``Object`` - an object about all information which is sent to the sproof platform. This includes all events and attached data.
 
 ------------------------------------------------------------------------------
 
 State
 =====================
 
-Returns the current state of the client api. This includes also information about transaction and events including ids.
+Returns the current state of the client api. This also includes information about the transaction and events, including IDs.
 
 .. code-block:: bash
 
@@ -122,7 +122,7 @@ Parameters
 -------
 Returns
 -------
-returns ``Object`` - A object of all information which is stored of the premium users.
+The call returns ``Object`` - an object about all information which is stored on the premium users.
 
 ------------------------------------------------------------------------------
 

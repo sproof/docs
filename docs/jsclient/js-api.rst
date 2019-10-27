@@ -2,7 +2,7 @@
 API
 ========
 
-The sproof-api can be accessed by using the following domain: https://api.sproof.io/api/v1/profiles. To enable a fast integration into a node application we provide a js-sproof-client.
+The sproof API can be accessed through the domain https://api.sproof.io/api/v1/profiles. To enable a fast integration into a node application, we provide a JavaScript client for sproof named ``js-sproof-client``.
 
 .. code-block:: javascript
 
@@ -15,13 +15,13 @@ The sproof-api can be accessed by using the following domain: https://api.sproof
     });
     sproof.newAccount();
 
-In the following we describe the API calls for the sproof objects.
+In the following, we describe the API calls for the sproof objects.
 
 .. note::
-The params object provides fields to adjust the
+The ``params`` object provides fields to adjust the
         - items per page : ``per_page`` : ``Number``
-        - request page: ``page`` : ``Number``  Page to request
-        - entry : If you need only one specific entry use ``id``:``String``
+        - request page: ``page`` : ``Number``
+        - entry : If you need only one specific entry, use ``id``:``String``
 
 
 Transaction
@@ -34,15 +34,15 @@ Transaction
 
 Returns the transaction object.
 
-.. note:: If the id property in params is set, this call returns the specified transaction, otherwise it returns a list of the last 10 entries.
+.. note:: If the ``id`` property in ``params`` is set, this call returns the specified transaction. Otherwise, it returns a list of the last 10 entries.
 
 
 ----------
 Parameters
 ----------
 
-1. ``Object`` - params for call.
-2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+1. ``Object`` - Parameters for the call.
+2. ``Function`` - Callback which returns an error object as its first parameter and the result as its second.
 
 
 -------
@@ -50,16 +50,16 @@ Returns
 -------
 
 
-returns ``Object`` - A transaction object, or an error when no transaction was found:
+Returns ``Object`` - a transaction object, or an error when no transaction was found:
 
   - ``_id`` - ``String``: Transaction hash.
-  - ``blockNumber`` - ``Number``: Blocknumber of the block.
-  - ``blockHash`` 32 Bytes - ``String``: Hash of the block where this transaction was in.
+  - ``blockNumber`` - ``Number``: The number of the block.
+  - ``blockHash`` 32 Bytes - ``String``: Hash of the block where this transaction is contained in.
   - ``timestamp`` - ``Number``: Unix timestamp of the block creation time.
   - ``dhtHash`` 32 Bytes - ``String``: IPFS hash of the content.
   - ``events``- ``List``: List of all events included in this transaction.
   - ``from`` - ``String``: Address of the sender.
-  - ``publicKey`` - ``String``: PublicKey of the sender.
+  - ``publicKey`` - ``String``: Public key of the sender.
 
 -------
 Example
@@ -97,15 +97,15 @@ Event
 
 Returns the event object.
 
-.. note:: If the id property in params is set, this call returns the specified event, otherwise it returns a list of the last 10 entries.
+.. note:: If the ``id`` property in ``params`` is set, this call returns the specified event. Otherwise, it returns a list of the last 10 entries.
 
 
 ----------
 Parameters
 ----------
 
-1. ``Object`` - params for call.
-2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+1. ``Object`` - Parameters for the call.
+2. ``Function`` - Callback which returns an error object as its first parameter and the result as its second.
 
 
 -------
@@ -113,11 +113,11 @@ Returns
 -------
 
 
-returns ``Object`` - A event object, or an error when no event was found:
+Returns ``Object`` - an event object, or an error when no event was found:
 
   - ``_id`` - ``String``: Event hash.
   - ``eventType`` - ``String``: Type of the event.
-  - ``data`` - ``Object``: Events payload.
+  - ``data`` - ``Object``: Event payload.
   - ``transaction`` - ``String``: Corresponding transaction hash of the event.
   - ``from`` - ``String``: Address of the sender.
   - ``timestamp`` - ``Number``: Unix timestamp of the block creation time.
@@ -154,15 +154,15 @@ Profile
 
 Returns the profile object.
 
-.. note:: If the id property in params is set, this call returns the specified profile, otherwise it returns a list of the last 10 entries.
+.. note:: If the ``id`` property in ``params`` is set, this call returns the specified profile. Otherwise it returns a list of the last 10 entries.
 
 
 ----------
 Parameters
 ----------
 
-1. ``Object`` - params for call.
-2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+1. ``Object`` - Parameters for the call.
+2. ``Function`` - Callback which returns an error object as its first parameter and the result as its second.
 
 
 -------
@@ -170,17 +170,17 @@ Returns
 -------
 
 
-returns ``Object`` - A profile object, or an error when no profile was found:
+Returns ``Object`` - a profile object, or an error when no profile was found:
 
-  - ``_id`` - ``String``: Address of profile owner.
+  - ``_id`` - ``String``: Address of the profile owner.
   - ``data`` - ``Object``: Profile payload.
-  - ``publicKey`` - ``String``: Profiles public key.
-  - ``lastUpdate`` - ``Number``: Unix timestamp of the last interaction from this profile.
+  - ``publicKey`` - ``String``: The profile's public key.
+  - ``lastUpdate`` - ``Number``: Unix timestamp of the last interaction of this profile.
   - ``timestamp`` - ``Number``: Unix timestamp of the creation date.
-  - ``valid`` - ``Boolean``: ``TRUE`` if the profile was not revoked.
+  - ``valid`` - ``Boolean``: ``TRUE`` if any only if the profile was not revoked.
   - ``registrations`` - ``Object``: List of registration events.
   - ``events`` - ``Object``: List of all events.
-  - ``confirmations`` - ``Object``: Confirmation collection
+  - ``confirmations`` - ``Object``: Collection of all confirmations
 
 -------
 Example
@@ -219,15 +219,15 @@ Registrations
 
 Returns the registration object.
 
-.. note:: If the id property in params is set, this call returns the specified registration, otherwise it returns a list of the last 10 entries.
+.. note:: If the ``id`` property in ``params`` is set, this call returns the specified registration. Otherwise, it returns a list of the last 10 entries.
 
 
 ----------
 Parameters
 ----------
 
-1. ``Object`` - params for call.
-2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+1. ``Object`` - Parameters for the call.
+2. ``Function`` - Callback which returns an error object as its first parameter and the result as its second.
 
 
 -------
@@ -235,15 +235,15 @@ Returns
 -------
 
 
-returns ``Object`` - A registration object, or an error when no registration was found:
+Returns ``Object`` - a registration object, or an error when no registration was found:
 
   - ``_id`` - ``String``: Hash of the registration.
   - ``issuer`` - ``Object``: Address of the issuer.
   - ``event`` - ``String``: Corresponding event registration hash.
-  - ``validFrom`` - ``Number``: Unix timestamp valid from.
-  - ``validUntil`` - ``Number``: Unix timestamp valid until.
+  - ``validFrom`` - ``Number``: Unix timestamp for the start of the validity period.
+  - ``validUntil`` - ``Number``: Unix timestamp for the end of the validity period.
   - ``documentHash`` - ``String``: Hash of the registered document.
-  - ``valid`` - ``Boolean``: ``TRUE`` if the registration was not revoked.
+  - ``valid`` - ``Boolean``: ``TRUE`` if any only if the registration was not revoked.
   - ``dependencies`` - ``Object``: List of dependencies.
 
 -------
@@ -284,8 +284,8 @@ Returns the validation object.
 Parameters
 ----------
 
-1. ``String`` - hash to verify.
-2. ``Function`` - Callback, returns an error object as first parameter and the result as second.
+1. ``String`` - Hash to verify.
+2. ``Function`` - Callback which returns an error object as its first parameter and the result as its second.
 
 
 -------
@@ -293,9 +293,9 @@ Returns
 -------
 
 
-returns ``Object`` - A registration object, or an error when no registration was found:
+Returns ``Object`` - a registration object, or an error when no registration was found:
 
-  - ``validation`` - ``Object``: Contains boolean values which indicates if the registration or the profile was revoked or not.
+  - ``validation`` - ``Object``: Contains boolean values which indicate whether or not the registration or the profile were revoked.
   - ``registration`` - ``Object``: Registration event.
   - ``profile`` - ``Object``: Issuer payload
 

@@ -1,9 +1,9 @@
 ========
-Config
+Configuration of docker
 ========
 
 
-This is an example config file of the sproof docker client:
+This is an example configuration file for the sproof docker client:
 
 .. code-block:: javascript
 
@@ -31,9 +31,9 @@ This is an example config file of the sproof docker client:
     };
 
 
-- ``port`` - ``Number``: The used port for your api.
-- ``time`` - ``HH:MM``: Time to commit your documents to the blockchain. (transaction)
-- ``interval`` - ``Number``: Interval for commiting your documents to the blockchain.
-- ``showOnlyConfirmedIssuers`` - ``Boolean``: If this is ``false``, your locally hosted web ui will validate all documents registered in the sproof network. In the other case only document which are issued by yourself or from an sproof profile which you confirmed.
+- ``port`` - ``Number``: The used port for your API.
+- ``time`` - ``HH:MM``: The time of day when to commit your documents to the blockchain through a transaction.
+- ``interval`` - ``Number``: The  time interval for commiting your documents to the blockchain.
+- ``showOnlyConfirmedIssuers`` - ``Boolean``: If this is ``false``, your locally hosted Web UI will validate all documents registered in the sproof network. Otherwise, only documents which are issued by yourself or from a sproof profile which you confirmed can be validated.
 - ``sproofCode`` - ``String``: Enter your sproof code.
-- ``chainId`` - ``String``: The chainId == 3 is for the testnet, 1 is used for the mainnet.
+- ``chainId`` - ``String``: When set to 3, the testnet is used. When set to 1, the mainnet is used.

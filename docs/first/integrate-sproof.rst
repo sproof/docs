@@ -2,37 +2,37 @@
 Integrate sproof into an existing application
 ============
 
-This page is written for developers, how want to integrate sproof into an existing application with signing and timestamping digital data, e.g. certificates or diplomas.
+This page is written for developers who want to integrate sproof into an existing application for signing and timestamping digital data, e.g., certificates or diplomas.
 
 
 .. Hint:: We also provide a separate network for testing. >> :doc:`network-sproof` <<
 
 
-In order to fully integrate sproof to your software application four steps are needed:
+In order to fully integrate sproof into your software application, four steps are needed:
 
 1. Create a sproof profile
 ===============================
 
-Please visit :doc:`create-profile` for instructions to create a profile. You will need your sproof-code in order to configure your docker client.
+Please visit :doc:`create-profile` for instructions on how to create a profile. You will need your ``sproof-code`` in order to configure your docker client.
 
 
-2. Install the docker-client
+2. Install the docker client
 ===============================
 
-Please visit https://github.com/sproof/sproof-api-client for install instruction of the docker client.
+Please visit https://github.com/sproof/sproof-api-client for installation instruction of the docker client.
 
-At the end you should have your access code. For production mode, we recommend to host this service on a public domain over TLS.
+At the end of this step you should have your access code. For production mode, we recommend to host this service on a public domain over TLS.
 
 
-3. Integrate the client-api
+3. Integrate the client API
 ===============================
 
-Please visit :doc:`../docker/docker-api` for examples and instruction how to use the docker api. In the best case you only need one POST request.
+Please visit :doc:`../docker/docker-api` for examples and instructions how to use the docker API. In the best case, you only need one POST request.
 
 
-4. Embed IFrame on your website
+4. Embed an iframe into your Website
 ===============================
 
-If everything works correctly you are now able to embed the webpage of the docker-client into your application, by using an iframe.
+If everything works correctly, you can now embed the Webpage of the docker client into your application by using an iframe.
 
-On http://localhost:6001 you should see now our small verification page.
+On http://localhost:6001, you can see a small verification page.

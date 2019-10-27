@@ -2,7 +2,7 @@
 Schema
 ========
 
-The sproof-core module is a state machine which lives on top of a blockchain. The state transitions is triggered by socalled events. An issuer can add the hash reference of a list of events in a transaction to the blockchain, the raw-data is stored in IPFS. In this section we describe all currently available events.
+The sproof core module is a state machine which lives on top of a blockchain. The state transitions are triggered by so-called events. An issuer can add the hash reference relating to a list of events into a transaction on the blockchain. The raw data of the events is stored in IPFS. In this section, we describe all currently available events.
 
 Profile
 =====================
@@ -41,16 +41,16 @@ A profile schema has the following form:
         },
         "socialMedia": {
           "type": "array",
-          "description": "Array of social media post and user account. This is to increase the trust of the users account",
+          "description": "Array of social media posts and user accounts. This is to increase the trust of the user's account",
           "items": {
             "type": "object",
             "properties": {
               "userId": {
-                "description": 'The unique userid of a social media account.',
+                "description": 'The unique user ID of a social media account.',
                 "type": "string"
               },
               "messageId": {
-                "description": "The unique message_id which contrains the public key of the user",
+                "description": "The unique message ID which contains the public key of the user",
                 "type": "string"
               },
               "platform": {
@@ -71,7 +71,7 @@ A profile schema has the following form:
 Register
 ----------
 
-To register a profile (issuer) the ``PROFILE_REGISTER`` event is needed.
+To register a profile (issuer), the ``PROFILE_REGISTER`` event is needed.
 
 
 .. code-block:: javascript
@@ -79,7 +79,7 @@ To register a profile (issuer) the ``PROFILE_REGISTER`` event is needed.
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Profile register",
-      "description": "Register sproof profile event",
+      "description": "Register a sproof profile event",
       "type": "object",
       properties : {
         "eventType" : {
@@ -95,7 +95,7 @@ To register a profile (issuer) the ``PROFILE_REGISTER`` event is needed.
 Update
 ----------
 
-To update a profile (issuer) the ``PROFILE_UPDATE`` event is needed.
+To update a profile (issuer), the ``PROFILE_UPDATE`` event is needed.
 
 
 .. code-block:: javascript
@@ -119,7 +119,7 @@ To update a profile (issuer) the ``PROFILE_UPDATE`` event is needed.
 Revoke
 ----------
 
-To revoke a profile (issuer) the ``PROFILE_REVOKE`` event is needed.
+To revoke a profile (issuer), the ``PROFILE_REVOKE`` event is needed.
 
 
 .. code-block:: javascript
@@ -138,7 +138,7 @@ To revoke a profile (issuer) the ``PROFILE_REVOKE`` event is needed.
           type : 'object',
           properties: {
             reason: {
-              description: "Description for revokation",
+              description: "Description for revocation",
               type: "string",
               maxLength: 512,
             }
@@ -153,7 +153,7 @@ To revoke a profile (issuer) the ``PROFILE_REVOKE`` event is needed.
 UpdateKey
 ----------
 
-To update a profile's key  the ``PROFILE_UPDATE_KEY`` event is needed.
+To update a profile's key, the ``PROFILE_UPDATE_KEY`` event is needed.
 
 
 .. code-block:: javascript
@@ -172,7 +172,7 @@ To update a profile's key  the ``PROFILE_UPDATE_KEY`` event is needed.
           type : 'object',
           properties: {
             : {
-              description: "Description for revocation",
+              description: "Description of revocation",
               type: "string",
               maxLength: 512,
               minLength: 512,
@@ -186,13 +186,13 @@ To update a profile's key  the ``PROFILE_UPDATE_KEY`` event is needed.
 Document
 =====================
 
-A document can be any file with a hash reference. It is up to the user if the content of this file is publicly available or not. A document can have ``0`` to ``n`` receivers.
+A document can be any file with a hash reference. It is up to the user whether or not the content of this file is publicly available. A document can have ``0`` to ``n`` receivers.
 
 ----------
 Register
 ----------
 
-To register a document the ``DOCUMENT_REGISTER`` event is needed.
+To register a document, the ``DOCUMENT_REGISTER`` event is needed.
 
 
 .. code-block:: javascript
@@ -200,7 +200,7 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
   {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Register a document",
-      "description": "Register a document sproof event",
+      "description": "sproof event to register a document",
       "type": "object",
       properties : {
         "eventType" : {
@@ -219,7 +219,7 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
               type: "number",
             },
             documentHash : {
-              description: "Hash of document to register",
+              description: "Hash of the document to register",
               type: "string",
             },
             data: {
@@ -227,7 +227,7 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
             },
 
             locationHash: {
-              description: "IPFS hash of document",
+              description: "IPFS hash of the document",
               type:'string',
             },
             name: {
@@ -238,21 +238,21 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
               type: 'array',
               items: {
                 type: 'string',
-                description: 'Hashes of registration or receivers'
+                description: 'Hashes of the registration or the receivers'
               },
             },
             receiverAttributes : {
               type: 'array',
               items: {
                 type : 'string',
-                description: 'The attributes which are linked to an receiver, e.g., name, email, dateOfBirth,...'
+                description: 'The attributes which are linked to a receiver, e.g., name, email, date of birth etc.'
               }
             },
             receivers : {
               type: 'array',
               items: {
                 type: 'string',
-                description: 'Hashes of registration or receivers'
+                description: 'Hashes of the registration or the receivers'
               }
             }
           },
@@ -266,7 +266,7 @@ To register a document the ``DOCUMENT_REGISTER`` event is needed.
 Revoke
 ----------
 
-To revoke a document the ``DOCUMENT_REVOKE`` event is needed.
+To revoke a document, the ``DOCUMENT_REVOKE`` event is needed.
 
 
 .. code-block:: javascript
@@ -274,7 +274,7 @@ To revoke a document the ``DOCUMENT_REVOKE`` event is needed.
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Document revoke",
-      "description": "Revoke a sproof document event",
+      "description": "Event to revoke a sproof document",
       "type": "object",
       properties : {
         "eventType" : {
@@ -289,7 +289,7 @@ To revoke a document the ``DOCUMENT_REVOKE`` event is needed.
               type: "string"
             },
             reason: {
-              description: "Description for revokation",
+              description: "Description of revocation",
               type: "string",
               maxLength: 512,
             }
@@ -303,20 +303,20 @@ To revoke a document the ``DOCUMENT_REVOKE`` event is needed.
 Receiver
 =====================
 
-Documents can be issued to receivers. The receivers public representation is a pseudonous hash reference of its ID containing all attributes, and a timerange which defined the validity period.
+Documents can be issued to receivers. The receivers' public representation is a pseudonymous hash reference of its ID containing all attributes, and a timerange which defines the validity period.
 
 ----------
 Add
 ----------
 
-To add a receiver to a document the ``DOCUMENT_RECEIVER_ADD`` event is needed.
+To add a receiver to a document, the ``DOCUMENT_RECEIVER_ADD`` event is needed.
 
 .. code-block:: javascript
 
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Document receiver add",
-      "description": "Add a receiver to a sproof document event",
+      "description": "Event that adds a receiver to a sproof document",
       "type": "object",
       properties : {
         "eventType" : {
@@ -327,7 +327,7 @@ To add a receiver to a document the ``DOCUMENT_RECEIVER_ADD`` event is needed.
           type : 'object',
           properties: {
             receiverId: {
-              description: "Id of the receivers hash",
+              description: "ID of the receiver's hash",
               type: "string"
             },
             documentHash: {
@@ -346,14 +346,14 @@ To add a receiver to a document the ``DOCUMENT_RECEIVER_ADD`` event is needed.
 Revoke
 ----------
 
-To revoke a receiver of a document the ``DOCUMENT_RECEIVER_REVOKE`` event is needed.
+To revoke a receiver of a document, the ``DOCUMENT_RECEIVER_REVOKE`` event is needed.
 
 .. code-block:: javascript
 
     {
       "$schema": "http://json-schema.org/draft-06/schema#",
       "title": "Document receiver revoke",
-      "description": "Revoke a sproof document receiver event",
+      "description": "Event to revoke a sproof document receiver",
       "type": "object",
       properties : {
         "eventType" : {
@@ -364,11 +364,11 @@ To revoke a receiver of a document the ``DOCUMENT_RECEIVER_REVOKE`` event is nee
           type : 'object',
           properties: {
             receiverId: {
-              description: "Id of the receivers hash",
+              description: "ID of the receiver's hash",
               type: "string"
             },
             reason: {
-              description: "Description for revokation",
+              description: "Description for revocation",
               type: "string",
               maxLength: 512,
             }

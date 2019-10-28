@@ -19,9 +19,9 @@ Please visit :doc:`create-profile` for instructions on how to create a profile. 
 2. Install the docker client
 ===============================
 
-Please visit https://github.com/sproof/sproof-api-client for installation instruction of the docker client.
+Please visit https://github.com/sproof/sproof-api-client for installation instructions for the docker client.
 
-At the end of this step you should have your access code. For production mode, we recommend to host this service on a public domain over TLS.
+At the end of this step you get your access code. For production mode, we recommend to host this service on a public domain over TLS.
 
 
 3. Integrate the client API

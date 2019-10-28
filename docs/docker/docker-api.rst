@@ -74,7 +74,7 @@ Returns
 
 The call returns ``List`` - a list of registration objects, or an error when no registration was found:
 
-  - ``validation`` - ``Object``: Contains boolean values which indicate whether the registration or the profile was revoked or not.
+  - ``validation`` - ``Object``: Contains boolean values which indicate whether or not the registration or the profile have been revoked.
   - ``registration`` - ``Object``: The registration event.
   - ``profile`` - ``Object``: The issuer payload
 

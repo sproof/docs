@@ -1,19 +1,19 @@
 ============
-sproof Networks
+sproof networks
 ============
 
-sproof currently run on two networks. One for production and one for testing purposes.
+sproof currently runs on two networks. One is for production and one is for testing purposes.
 
-Ethereum Mainchain
+Ethereum main chain
 ------------
 :guilabel:`chainId=1`
 
-sproof run on the Ethereum mainchain. We will use this chainId in our config files. Please note that you need to select a plan on the https://app.sproof.io in order to interact with the mainchain. You can choose a plan on the settings page.
+sproof runs on the Ethereum mainchain. We use this `chainId` in our configuration files. Please note that you need to select a plan on the sproof Website (https://app.sproof.io) in order to interact with the main chain. You can choose a plan on the Settings page.
 
 Ethereum Ropsten Testnet
 ------------
 :guilabel:`chainId=3`
 
-The ropsten testnet is a Ethereum blockchain made to test decentralized applications. You can use this testnet in order to submit transaction and interact with the sproof network for free.
+The Ropsten testnet is an Ethereum blockchain designed to test decentralized applications. You can use this testnet to submit transactions and to interact with the sproof network for free.
 
 

@@ -66,7 +66,7 @@ If you want to use your own Ether (cryptocurrencies) to pay for your transaction
     let credentials = sproof.newAccount();
     console.log(credentials)
 
-After that you need to request Ether. Currently, sproof lives in the Ropsten Testnet. To get Ether, you need to enter your address on te `website <https://faucet.ropsten.be/>`_.
+After that you need to request Ether. Currently, sproof lives in the Ropsten Testnet. To get Ether, you need to enter your address on the `website <https://faucet.ropsten.be/>`_.
 
 Once your account has Ether, you can register your stuff with the following command::
 

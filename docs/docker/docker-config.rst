@@ -16,9 +16,10 @@ This is an example configuration file for the sproof docker client:
         interval: 10
       },
 
-      showOnlyConfirmedIssuers: true,
+      validateOnlyConfirmedIssuers: true,
 
       sproof: {
+        sproofPremium: true,
         uri: 'https://api.sproof.io/',
         credentials: {
           sproofCode: 'YOUR SPROOF CODE'
@@ -34,6 +35,7 @@ This is an example configuration file for the sproof docker client:
 - ``port`` - ``Number``: The used port for your API.
 - ``time`` - ``HH:MM``: The time of day when to commit your documents to the blockchain through a transaction.
 - ``interval`` - ``Number``: The  time interval for commiting your documents to the blockchain.
-- ``showOnlyConfirmedIssuers`` - ``Boolean``: If this is ``false``, your locally hosted Web UI will validate all documents registered in the sproof network. Otherwise, only documents which are issued by yourself or from a sproof profile which you confirmed can be validated.
+- ``validateOnlyConfirmedIssuers`` - ``Boolean``: If this is ``false``, your locally hosted Web UI will validate all documents registered in the sproof network. Otherwise, only documents which are issued by yourself or from a sproof profile which you confirmed can be validated.
 - ``sproofCode`` - ``String``: Enter your sproof code.
+- ``sproofPremium`` - ``Boolean``: If ``true``, your locally hosted clietn will synchronize with the web app.
 - ``chainId`` - ``String``: When set to 3, the testnet is used. When set to 1, the mainnet is used.

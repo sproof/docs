@@ -14,7 +14,7 @@ Export your ``sproof-code`` in the Settings page (https://app.sproof.io/#/settin
 
 Verify your Website (recommended)
 ------------
-You need to enter your Website in the signup phase. In order to verify that you are in control of its domain, you need to upload a file to your Web server, which is accessible under your root domain. You can find more detailed instructions on the Web app.
+You need to enter your Website in the signup phase. In order to verify that you are in control of its domain, you need to upload a file to your Web server, which is accessible under your root domain. You can find more detailed instructions on the Web app (https://app.sproof.io/#/verify-domain).
 
 This process is necessary to provide additional evidence that you are in fact the organisation you created the profile for. It also helps others to trust and confirm your identity (see below). Your identity is linked to your profile.
 

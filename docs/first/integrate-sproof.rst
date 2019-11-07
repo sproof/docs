@@ -2,10 +2,12 @@
 Integrate sproof into an existing application
 ============
 
-This page is written for developers who want to integrate sproof into an existing application for signing and timestamping digital data, e.g., certificates or diplomas.
+This page is targeted at developers who want to integrate sproof into an existing application for signing and timestamping digital data, e.g., certificates or diplomas.
+
+For testing and production, two separate networks are available, see :doc:`network-sproof`.
 
 
-.. Hint:: We also provide a separate network for testing. >> :doc:`network-sproof` <<
+.. Hint:: Using the test network is free and allows for easy testing and integration.
 
 
 In order to fully integrate sproof into your software application, four steps are needed:
@@ -13,26 +15,31 @@ In order to fully integrate sproof into your software application, four steps ar
 1. Create a sproof profile
 ===============================
 
-Please visit :doc:`create-profile` for instructions on how to create a profile. You will need your ``sproof-code`` in order to configure your docker client.
+If you have not done so already, please create a sproof profile first. Visit :doc:`create-profile` for more detailed instructions. You will need your ``sproof-code`` in order to configure your docker client in the next step.
 
 
 2. Install the docker client
 ===============================
 
-Please visit https://github.com/sproof/sproof-api-client for installation instructions for the docker client.
+In order to make use of the sproof API, the sproof API client needs to be installed on a physical or virtual machine. The client is available as a ready-to-use docker image. Please visit https://github.com/sproof/sproof-api-client for installation instructions.
 
-At the end of this step you get your access code. For production mode, we recommend to host this service on a public domain over TLS.
 
+.. Hint:: If you plan to use the docker client in production, we recommend to host this service on a public domain over TLS.
+
+
+After the docker client setup, you get your access code for use in the next step.
 
 3. Integrate the client API
 ===============================
 
-Please visit :doc:`../docker/docker-api` for examples and instructions how to use the docker API. In the best case, you only need one POST request.
+You can now access the sproof API through the client API set up in the previous step. Examples and instructions on how to use the client API are provided in the docker API documentation (:doc:`../docker/docker-api`). You need your access code from the previous steps for some of the API calls.
 
+.. Hint:: Depending on your use case, it may be sufficient to only use the `verify` API call, which is one POST request. Fully ready-to-use examples are provided in multiple common programming languages.
+ 
 
 4. Embed an iframe into your Website
 ===============================
 
-If everything works correctly, you can now embed the Webpage of the docker client into your application by using an iframe.
+If you have finished integrating the API and everything works as desired, you can embed the Webpage of the docker client into your application, e.g., by using an iframe.
 
-On http://localhost:6001, you can see a small verification page.
+Port 6001 of the machine on which you set up the docker client (step 2) features a HTTP server with a small verification page. Use, http://localhost:6001 or http://<your-machine-domain>:6001, respetively, to display this verification page. Alternatively, you can embed it into another page as described above.

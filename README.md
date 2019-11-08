@@ -1,9 +1,9 @@
 
-# sproof documentation (js-sproof-docs) [![Documentation Status](https://readthedocs.org/projects/sproof-docs/badge/?version=latest)](https://sproof-docs.readthedocs.io/en/latest/?badge=latest)
+# sproof documentation (sproof-docs) [![Documentation Status](https://readthedocs.org/projects/sproof-docs/badge/?version=latest)](https://sproof-docs.readthedocs.io/en/latest/?badge=latest)
 
-This repository contains the documentation of `js-sproof`. It explains how to set up sproof profiles and how to use the sproof docker client and JavaScript API.
+This repository contains the documentation of sproof. It explains how to set up sproof profiles and how to use the sproof docker client and JavaScript API.
 
-## For users
+## For users (developers and integrators)
 
 A fully formatted version of this documentation can be found on [Read the Docs](https://sproof-docs.readthedocs.io).
 

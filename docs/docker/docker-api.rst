@@ -27,7 +27,12 @@ The return code of any API call is a HTTP status code. The status code indicates
 - ``200`` (OK): The call was successful.
 - ``400`` (Bad Request): There are either parameters missing or the parameter values are invalid (e.g., out of range).
 - ``401`` (Unauthorized): You do not have permission to perform this operation. Make sure that you provided your access code.
+- ``402`` (Payment Required): You are trying to perform an operation for which you do not have sufficient funds. If you are not a premium user, choose a plan. If you are already a premium user, consider upgrading your plan. A plan can be chosen in your profile settings (https://app.sproof.io/#/choose-plan/).
+- ``403`` (Forbidden): You do not have permission to perform this operation. Your access code is valid.
 - ``404`` (Not Found): The ID, e.g., document or profile ID, that you specified does not exist.
+- ``406`` (Not Acceptable): The Web server does not support the set of constraints you specified in the Accept headers of your request. Remove or loosen the constraints, i.e., send more liberal Accept headers.
+- ``500`` (Internal Server Error): An error occured while processing the call. Please contact us (:doc:`../help`) if you receive this error so that we can investigate and fix it.
+- ``501`` (Not Implemented): This feature is not implemented (yet). If you think that this feature should be implemented, please contact us (:doc:`../help`).
 
 The following sections list the available API operations and their parameters. Sample code in different programming languages is available at the end (:ref:`example`).
 

@@ -78,7 +78,7 @@ This call revokes a previously registered file.
 
 .. code-block:: bash
 
-    POST: https://{{yourDomain}}/api/v1/file/revoke?accessCode={yourAccessCode}
+    POST: https://{yourDomain}/api/v1/file/revoke?accessCode={yourAccessCode}
 
 The body must contain a file embedded into a ``form-data`` field. The name of the document must be ``file`` (see :ref:`register-file`).
 
@@ -108,10 +108,9 @@ Returns
 
 The call returns ``List`` - a list of registration objects, or an error when no registration was found:
 
-  - ``validation`` - ``Object``: Contains boolean values which indicate whether or not the registration or the profile issuing it have been revoked.
+  - ``validation`` - ``Object``: Contains two boolean values which indicate whether the registration and the profile that performed it are valid. If both boolean values are ``true``, the registration and the profile are valid, i.e., they have not been revoked. If either value is ``false``, the registration or the profile has been revoked, respectively.
   - ``registration`` - ``Object``: The registration event where the file had been previously registered.
   - ``profile`` - ``Object``: Information about the issuer of the file.
-
 
 
 ------------------------------------------------------------------------------

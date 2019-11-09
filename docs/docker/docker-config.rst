@@ -44,7 +44,7 @@ Profile-related parameters
 ---------
 
 - ``sproofCode`` - ``String``: Enter your sproof code here. Without a valid sproof code, the client API will not work.
-- ``sproofPremium`` - ``Boolean``: If ``true``, your locally hosted client will synchronize with the `Web app <https://app.sproof.io/>`_.
+- ``sproofPremium`` - ``Boolean``: If this parameter is set to ``true``, your locally hosted client will synchronize pending events with the `Web app <https://app.sproof.io/>`_. The client will also send keep-alive messages to the sproof servers so that you can see the status of your docker client in the Web app.
 
 Network-related parameters
 ----------
@@ -54,7 +54,7 @@ Network-related parameters
 Blockchain-related parameters
 ----------
 
-- ``time`` - ``HH:MM``: The time of day when to commit your documents to the blockchain through a transaction.
-- ``interval`` - ``Number``: The time interval for commiting your documents to the blockchain.
+- ``time`` - ``HH:MM``: The time of day when to commit your documents to the blockchain through a transaction. If this parameter is set, the ``interval`` parameter must not be set at the same time.
+- ``interval`` - ``Number``: The time interval in minutes for commiting your documents to the blockchain. For example, a value of 10 means that committing happens every ten minutes. If this parameter is set, the ``time`` parameter must not be set at the same time.
 - ``validateOnlyConfirmedIssuers`` - ``Boolean``:  If this is ``true``, only documents which are issued by yourself or from a sproof profile which you confirmed can be validated. Otherwise, your locally hosted Web UI will validate all documents registered in the sproof network.
 - ``chainId`` - ``String``: The network to be used for all operations. For details about sproof networks, see :doc:`../first/network-sproof`.

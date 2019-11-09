@@ -50,6 +50,7 @@ Network-related parameters
 ----------
 
 - ``port`` - ``Number``: The *internal* (docker-side) HTTP port used to expose the API. If you want to change the HTTP port used to expose the API externally, you need to change the port mapping in the `docker-compose.yml` file.
+- ``uri`` - ``String``: The address where the backend (``sproof-core``) is running. At the moment, only the official sproof backend (https://api.sproof.io/) can be used.
 
 Blockchain-related parameters
 ----------

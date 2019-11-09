@@ -21,7 +21,7 @@ Welcome to sproof's documentation!
 
 .. toctree::
    :maxdepth: 1
-   :caption: docker-client
+   :caption: docker API client
 
    docker/docker-config
    docker/docker-api

@@ -157,7 +157,7 @@ The call returns ``Object`` - an object about all information which is stored ab
 
 .. _`example`:
 
-Example
+API call example
 =====================
 
 The following is sample code to submit a (:ref:`register-file`) POST request to the API. The sample code is available in different, commonly used programming languages.

@@ -1,13 +1,13 @@
 ========
-Configuration of docker
+Configuration of the docker image
 ========
 
 The `sproof API client <https://github.com/sproof/sproof-api-client>`_ can be configured based on your needs. The configuration must be specified in the `data/config.js` file before the docker image is run. An example file as well as an explanation of all configuration parameters are provided below.
 
-Example
+Example configuration file
 =========
 
-The following is an example configuration file (also available in the `sproof-api-client respository <https://github.com/sproof/sproof-api-client/blob/master/data/exampleConfig.js>`_. It contains a sample configuration which requires only setting your sproof code (see below) and can be readily used without further changes in most common setups. The parameters are explained  below.
+The following is an example configuration file (also available in the `sproof-api-client respository <https://github.com/sproof/sproof-api-client/blob/master/data/exampleConfig.js>`_). It contains a sample configuration which requires only setting your sproof code (see below) and can be readily used without further changes in most common setups. The parameters are explained  below.
 
 .. code-block:: javascript
 

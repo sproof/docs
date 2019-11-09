@@ -49,7 +49,7 @@ Profile-related parameters
 Network-related parameters
 ----------
 
-- ``port`` - ``Number``: The HTTP port used to expose the API.
+- ``port`` - ``Number``: The *internal* (docker-side) HTTP port used to expose the API. If you want to change the HTTP port used to expose the API externally, you need to change the port mapping in the `docker-compose.yml` file.
 
 Blockchain-related parameters
 ----------

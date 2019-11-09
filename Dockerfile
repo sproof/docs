@@ -1,15 +1,6 @@
-FROM ubuntu:xenial
+FROM python:3-alpine
 
-# Install apt packages
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y python-pip
 RUN pip install --upgrade pip
-
-# Clean downloaded apt packages after install
-RUN apt clean && \
-    apt autoremove
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install python packages
 RUN pip install 'sphinx              == 1.6.2' && \

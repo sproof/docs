@@ -3,7 +3,8 @@ FROM python:3-alpine
 RUN pip install --upgrade pip
 
 # Install python packages
-RUN pip install 'sphinx              == 1.6.2' && \
+RUN pip install 'pygments            == 2.4.2' && \
+    pip install 'sphinx              == 1.6.2' && \
     pip install 'sphinx-autobuild    == 0.6.0' && \
     pip install 'sphinx_rtd_theme    == 0.2.4' && \
     pip install 'sphinx-tabs         == 1.1.10'

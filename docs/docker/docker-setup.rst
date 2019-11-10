@@ -70,10 +70,10 @@ The docker client needs to be configured through a configuration file before bei
 The style of the Web interface for verifying documents exposed by the client needs to be specified through a configuation file. Copy ``data/exampleTheme.js`` to ``data/theme.js``. You can adjust colors and buttons styles, if you like. Please refer to the `Material UI theme documentation <https://material-ui.com/customization/theming/>`_ for details.
 
 
-4. Set the translations
+4. Set the translations (optional)
 --------------
 
-The strings used for button captions, error messages etc. need to be specified through a configuration file. For English and German, you will find ``exampleEn.js`` and ``exampleDe.js`` in the ``data`` folder. Copy them to ``en.js`` and ``de.js`` in the ``data`` folder and edit these files to adjust the translations, if you like.
+The strings used for button captions, error messages etc. in the verifier can be specified through language configuration files. For English and German, you will find ``exampleEn.js`` and ``exampleDe.js`` in the ``data`` folder. Copy them to ``en.js`` and ``de.js`` in the ``data`` folder and edit these files to adjust the translations, if you like. Even if these files are not provided, a default English translation will be used.
 
 Operation instructions
 ==============

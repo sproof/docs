@@ -49,7 +49,7 @@ The sproof API client is available at https://github.com/sproof/sproof-api-clien
         
         On Windows, the following PowerShell commands (require v5 or higher) do the same:
 
-        .. code-block:: bash
+        .. code-block:: powershell
         
            wget https://github.com/sproof/sproof-api-client/archive/master.zip -OutFile master.zip
            Expand-Archive master.zip -DestinationPath .

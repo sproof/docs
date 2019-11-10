@@ -67,7 +67,7 @@ The docker client needs to be configured through a configuration file before bei
 3. Set the verifier theme
 --------------
 
-The style of the Web interface for verifying documents exposed by the client needs to be specified through a configuation file. Copy ``data/exampleTheme.js`` to ``data/theme.js``. You can adjust colors and buttons styles, if you like. The names and values should be self-explanatory. If you have questions, please see :doc:`../help`. This documentation will be extended in the future.
+The style of the Web interface for verifying documents exposed by the client needs to be specified through a configuation file. Copy ``data/exampleTheme.js`` to ``data/theme.js``. You can adjust colors and buttons styles, if you like. Please refer to the `Material UI theme documentation <https://material-ui.com/customization/theming/>`_ for details.
 
 
 4. Set the translations

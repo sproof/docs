@@ -1,6 +1,6 @@
-========
+=================
 docker client API
-========
+=================
 
 The sproof API client is a docker container which encapsulates the ``js-sproof-client`` and can be accessed through regular API calls. Currently, this module supports the registration and the revocation of arbitrary files. The general structure of the API and the available operations are described below, followed by sample code in different programming languages.
 

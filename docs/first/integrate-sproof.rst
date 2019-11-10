@@ -1,6 +1,6 @@
-============
+=============================================
 Integrate sproof into an existing application
-============
+=============================================
 
 This page is targeted at developers who want to integrate sproof into an existing application for signing and timestamping digital data, e.g., certificates or diplomas.
 
@@ -13,13 +13,13 @@ For testing and production, two separate networks are available, see :doc:`netwo
 In order to fully integrate sproof into your software application, four steps are needed:
 
 1. Create a sproof profile
-===============================
+==========================
 
 If you have not done so already, please create a sproof profile first. Visit :doc:`create-profile` for more detailed instructions. You will need your ``sproof-code`` in order to configure your docker client in the next step.
 
 
 2. Install the docker client
-===============================
+============================
 
 In order to make use of the sproof API, the sproof API client needs to be set up on a physical or virtual machine. The client is available as a ready-to-use docker image. Please see :doc:`../docker/docker-setup` for setup instructions.
 
@@ -30,7 +30,7 @@ In order to make use of the sproof API, the sproof API client needs to be set up
 After the docker client setup, you get your access code for use in the next step.
 
 3. Integrate the client API
-===============================
+===========================
 
 You can now access the sproof API through the docker client that has been set up in the previous step. Examples and instructions on how to use the client API are provided in the docker API documentation (:doc:`../docker/docker-api`). You need your access code from the previous steps for most of the API calls.
 
@@ -44,7 +44,7 @@ Note that, for testing and production, two separate networks are available, see 
  
 
 4. Embed an iframe into your Website
-===============================
+====================================
 
 After you have finished integrating the API and everything works as desired, you can embed the Webpage of the docker client into your application, e.g., by using an iframe.
 

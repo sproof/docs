@@ -21,7 +21,7 @@ If you have not done so already, please create a sproof profile first. Visit :do
 2. Install the docker client
 ===============================
 
-In order to make use of the sproof API, the sproof API client needs to be installed on a physical or virtual machine. The client is available as a ready-to-use docker image. Please visit https://github.com/sproof/sproof-api-client for installation instructions.
+In order to make use of the sproof API, the sproof API client needs to be set up on a physical or virtual machine. The client is available as a ready-to-use docker image. Please see :doc:`../docker/docker-setup` for setup instructions.
 
 
 .. Hint:: If you plan to use the docker client in production, we recommend to host this service on a public domain over TLS.
@@ -32,7 +32,7 @@ After the docker client setup, you get your access code for use in the next step
 3. Integrate the client API
 ===============================
 
-You can now access the sproof API through the client API that has been set up in the previous step. Examples and instructions on how to use the client API are provided in the docker API documentation (:doc:`../docker/docker-api`). You need your access code from the previous steps for some of the API calls.
+You can now access the sproof API through the docker client that has been set up in the previous step. Examples and instructions on how to use the client API are provided in the docker API documentation (:doc:`../docker/docker-api`). You need your access code from the previous steps for most of the API calls.
 
 .. Hint:: Depending on your use case, it may be sufficient to only use the `verify` API call, which is one POST request. Fully ready-to-use examples are provided in multiple common programming languages.
 

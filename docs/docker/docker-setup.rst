@@ -1,5 +1,5 @@
 ============
-sproof-api-client
+Docker client setup
 ============
 
 This module provides an API for registering, revoking and verifying data
@@ -22,7 +22,7 @@ Create a account on https://app.sproof.io.
 ------------
 
 Copy the ``exampleTheme.js`` and ``exampleConfig.js`` to ``theme.js``
-and ``config.js``.
+and ``config.js``. For a detailed example and explanation of the settings file, see :doc:`../docker/docker-config`.
 
 Add your sproof code to ``data/config.js`` You can download your sproof
 code in the settings page.

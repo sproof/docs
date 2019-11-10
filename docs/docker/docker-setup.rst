@@ -2,74 +2,105 @@
 Docker client setup
 ============
 
-This module provides an API for registering, revoking and verifying data
-with an existing sproof account.
+The sproof API client is capable of registering, revoking and verifying data with an existing sproof account. It comes as a ready-to-use docker image that needs to be set up before its use. This document explains the prerequisites, the actual setup and the operation of the docker client.
 
-Start
+Prerequisites
 ============
 
-1. Create a premium account
+The sproof API client is based on Doker Compose and requires a sproof account.
+
+Docker Compose
 ------------
 
-Create a account on https://app.sproof.io.
+Before you can set up the docker client, you need to install `Docker <https://docs.docker.com/>`_ and `Docker Compose <https://docs.docker.com/compose/>`_ on the machine where you want to install the API client. Please refer to the linked documentation for installation instructions for your operating system.
 
-2. Get the sproof-client-api
+sproof account
 ------------
 
-``git clone https://gitlab.com/sproof/sproof-api-client.git``
+In addition, a sproof account is required. Visit :doc:`create-profile` for instructions on how to create an account. Note that testing is possible with a free account, while production-level operation requires a premium account.
 
-3. Create config and theme
-------------
-
-Copy the ``exampleTheme.js`` and ``exampleConfig.js`` to ``theme.js``
-and ``config.js``. For a detailed example and explanation of the settings file, see :doc:`../docker/docker-config`.
-
-Add your sproof code to ``data/config.js`` You can download your sproof
-code in the settings page.
-
-For production change the chainId from ``3`` to ``1``. Please note, that
-the chainId 1 is the mainnet. Before you can use sproof on the mainnet
-you will need to choose a plan on the web app.
-
-4. Modify the verifier theme
-------------
-
-You will find a ``exampleTheme.js`` file in the ``data`` folder. You can
-adjust colors and buttons styles. Save it under ``theme.js``
-
-5. Modify the text of the verifier
-------------
-
-You will find the files ``exampleEn.js`` and ``exampleDe.js`` in the
-``data`` folder. Save them under ``en.js`` and ``de.js`` to adjust the
-translations.
-
-Run
+Setup instructions
 ============
 
-Run:
+1. Get `sproof-client-api`
+------------
+
+The sproof API client is available at https://github.com/sproof/sproof-api-client. You can obtain the client either through ``git`` or through a regular download.
+
+     .. tabs::
+
+       .. tab:: git
+       
+        If you have ``git`` installed on your machine, you can use it to download the client:
+
+        .. code-block:: bash
+
+           git clone https://github.com/sproof/sproof-api-client.git
+       
+       .. tab:: Regular download
+       
+        `Download <https://github.com/sproof/sproof-api-client/archive/master.zip>`_ the source file archive and unpack the downloaded archive, e.g., with the following commands on Linux:
+ 
+        .. code-block:: bash
+        
+           wget https://github.com/sproof/sproof-api-client/archive/master.zip
+           unzip master.zip
+           rm master.zip
+        
+        On Windows, the following PowerShell commands (require v5 or higher) do the same:
+
+        .. code-block:: bash
+        
+           wget https://github.com/sproof/sproof-api-client/archive/master.zip -OutFile master.zip
+           Expand-Archive master.zip -DestinationPath .
+           Remove-Item master.zip
+           
+After this step, you have a folder named ``sproof-api-client-master`` containing the source files of the docker client. This folder is the basis for all subsequent steps.
+
+         
+2. Set the docker client configuration
+------------
+
+The docker client needs to be configured through a configuration file before being set up. Copy ``data/exampleConfig.js`` to ``data/config.js`` to obtain a sample configuration file which only requires setting your sproof code and (optionally) other parameters based on your needs. Please find a detailed description of the parameters in :doc:`../docker/docker-config`.
+
+
+3. Set the verifier theme
+------------
+
+The style of the Web interface for verifying documents exposed by the client needs to be specified through a configuation file. Copy ``data/exampleTheme.js`` to ``data/theme.js``. You can adjust colors and buttons styles, if you like. The names and values should be self-explanatory. If you have questions, please see :doc:`../help`. This documentation will be extended in the future.
+
+
+4. Set the translations
+------------
+
+The strings used for button captions, error messages etc. need to be specified through a configuration file. For English and German, you will find ``exampleEn.js`` and ``exampleDe.js`` in the ``data`` folder. Copy them to ``en.js`` and ``de.js`` in the ``data`` folder and edit these files to adjust the translations, if you like.
+
+Operation instructions
+============
+
+Once the required configuration files are in place, the client can be built and run. As soon as it is running, you can access the docker client API through it.
+
+Building the client
+------------
+
+In order to build docker API client, run
 
 ``docker-compose up --build``
 
-to start this module. It will create a API and host the verifier theme
-on port 6001. The docker file will build the web verifier only on the
-first start, to be sure to add ``--build`` if you change the theme.
+Note the ``--build`` parameter. It makes sure that the Web verifier is built with your custom theme.
 
-By default it will not rebuild the UI. If you want to rebuild the UI, so
-that it uses your custom theme you need to uncomment the line
+After the build process completes successfully, an access code will be output both, on the console and in ``data/accessCode.json``. The output on the console looks like this:
 
-``command: sh ./scripts/buildUIAndStart.sh``
+.. image:: access-code-output.png
 
-in the docker-compose file.
+The access code is a token which secures your API endpoint. It is is necessary for sending and processing most external API requests.
 
-Access code
-=============
+Running the client
+------------
 
-The access code is a token, which secures your API endpoint. It will be
-generated and stored under ``data/accessCode.json`` and logged. This
-accessCode is necessery to send external API requests to the sproof
-client.
+After building the client, it will be started automatically. It will host an API endpoint as well as the verifier with your theme on port 6001 through a Web server.
 
-Visit
-https://sproof-docs.readthedocs.io/en/latest/docker/docker-api.html for
-the documentation for the API endpoint.
+Accessing the API
+-------------
+
+Once the docker client is running, you can access the client API through it. Note that, for most API calls, you need the access code that has been output during the build process. For a detailed documentation of the API endpoint as well as examples in multiple common programming languages, please see :doc:`../docker/docker-api`.

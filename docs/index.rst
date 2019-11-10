@@ -23,6 +23,7 @@ Welcome to sproof's documentation!
    :maxdepth: 1
    :caption: docker API client
 
+   docker/docker-setup
    docker/docker-config
    docker/docker-api
 

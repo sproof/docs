@@ -16,6 +16,7 @@ Welcome to sproof's documentation!
 
    first/create-profile
    first/integrate-sproof
+   first/embed-iframe
    first/network-sproof
 
 

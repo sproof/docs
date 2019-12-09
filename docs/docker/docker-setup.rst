@@ -7,7 +7,7 @@ The sproof API client is capable of registering, revoking and verifying data wit
 Prerequisites
 =============
 
-The sproof API client is based on Doker Compose and requires a sproof account.
+The sproof API client is based on Docker Compose and requires a sproof account.
 
 Docker Compose
 --------------

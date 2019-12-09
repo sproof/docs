@@ -50,4 +50,4 @@ After you have finished integrating the API and everything works as desired, you
 
 Port 6001 of the machine on which you set up the docker client (step 2) features a HTTP server with a small verification page. Use, http://localhost:6001 or http://<your-machine-domain>:6001, respectively, to display this verification page. Alternatively, you can embed it into another page as described above.
 
-If you are looking for an easier option for providing for verification that does not require managing certificates or performing other maintenance of Docker client, please refer to :doc:`../first/embed-iframe`.
+If you are looking for an easier option for providing document verification that does not require managing certificates or performing other maintenance of the Docker client, please refer to :doc:`../first/embed-iframe`.

@@ -4,12 +4,10 @@ Docker client setup
 
 The sproof API client is capable of registering, revoking and verifying data with an existing sproof account. It comes as a ready-to-use docker image that needs to be set up before its use. This document explains the prerequisites, the actual setup and the operation of the docker client.
 
-If you are looking for an easier option that does not require to host the Docker client yourself, please refer to :doc:`../first/embed-iframe`.
-
 Prerequisites
 =============
 
-The sproof API client is based on Doker Compose and requires a sproof account.
+The sproof API client is based on Docker Compose and requires a sproof account.
 
 Docker Compose
 --------------

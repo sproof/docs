@@ -190,7 +190,7 @@ The following is sample code to submit a (:ref:`register-file`) POST request to 
 
                 curl_setopt($ch, CURLOPT_POST, 1);
 
-                curl_setopt($curl, CURLOPT_POSTFIELDS, [
+                curl_setopt($ch, CURLOPT_POSTFIELDS, [
                     'file' => curl_file_create($tempFileName)
                 ]);
 

@@ -174,10 +174,10 @@ The following is sample code to submit a (:ref:`register-file`) POST request to 
 
             <?php
 
-                $document = '{YOUR PDF FILE}'
+                $document = '{YOUR PDF FILE}';
 
                 //write file to filesystem
-                tempFileName = tempnam(sys_get_temp_dir(), 'pdfDocForSproof');
+                $tempFileName = tempnam(sys_get_temp_dir(), 'pdfDocForSproof');
                 file_put_contents($tempFileName, $document);
 
 
@@ -198,7 +198,7 @@ The following is sample code to submit a (:ref:`register-file`) POST request to 
 
                 $server_response = curl_exec($ch);
 
-                if (curl_errno($ch)) {
+                if (!curl_errno($ch)) {
                   echo "Response: {$server_response}";
                  } else {
                    echo "Error: {$server_response}";

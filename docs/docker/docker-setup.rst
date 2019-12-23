@@ -55,7 +55,7 @@ The sproof API client is available at https://github.com/sproof/sproof-api-clien
            Expand-Archive master.zip -DestinationPath .
            Remove-Item master.zip
            
-After this step, you have a folder named ``sproof-api-client-master`` containing the source files of the docker client. This folder is the basis for all subsequent steps.
+After this step, you have a folder named ``sproof-api-client`` containing the source files of the docker client. This folder is the basis for all subsequent steps.
 
          
 2. Set the docker client configuration

@@ -59,6 +59,8 @@ Parameters
 1. ``youAccessCode`` - Needed for authorization (see :ref:`API-structure`).
 2. ``public`` - If the file should be publicly accessible, set ``public`` to ``true``. The default is ``false``.
 3. ``name`` (optional) - A name for the file. This name may also be used as a tag.
+4. ``validFrom`` (optional) - A unix timestamp to indicate when the document is valid. If nothing is provide the document is valid after the registration.
+5. ``validUntil`` (optional) - A unix timestamp when the registration expires.
 
 
 -------

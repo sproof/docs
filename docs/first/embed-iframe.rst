@@ -14,7 +14,7 @@ The source of the iframe to embed can be specified by a verifier URL with URL pa
 
 ``{verificationUrl}/#/verify/{lang}?color={color}&btnFontColor={btnFontColor}&profile={profileAddress}&font='{font}'``
 
-The URL (``verificationUrl``) can either be ``https://verify.sproof.io/`` for the mainnet or ``https://ropsten.sproof.io/`` for the testnet. Please refer to :doc:`network-sproof` for a more detailed description about the sproof networks.
+The URL (``verificationUrl``) can either be ``https://verify.sproof.io/`` for the mainnet or ``https://ropsten.sproof.io/`` for the testnet or ``yourDomain`` on which you host the docker API client. Please refer to :doc:`network-sproof` for a more detailed description about the sproof networks.
 
 The following URL parameters may be specified:
 

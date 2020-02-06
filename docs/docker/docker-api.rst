@@ -45,7 +45,7 @@ This call registers a file in the sproof system and returns the hash as well as 
 
 .. code-block:: bash
 
-    POST: https://{yourDomain}/api/v1/file/register?public=false&name={name}&accessCode={yourAccessCode}
+    POST: https://{yourDomain}/api/v1/file/register?public=false&name={name}&accessCode={yourAccessCode}&validUntil=1590819300&tags=tag1,tag2,tag3
 
 The body must contain a file embedded into a ``form-data`` field. The name of the document must be ``file``, as illustrated below:
 
@@ -61,6 +61,7 @@ Parameters
 3. ``name`` (optional) - A name for the file. This name may also be used as a tag.
 4. ``validFrom`` (optional) - A unix timestamp to indicate when the document is valid. If nothing is provided the document is valid after the registration.
 5. ``validUntil`` (optional) - A unix timestamp when the registration expires.
+6. ``tags`` (optional) - A comma separated list of tags for your document. Note: A tag contains only letters from A-Z and numbers. All other characters will be removed.
 
 
 -------
